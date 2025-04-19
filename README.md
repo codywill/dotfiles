@@ -7,7 +7,7 @@
 From this directory:
 
 ```bash
-$ stow -v -t ~/.config */
+$ stow -v -t ~ */
 ```
 
 # Software
