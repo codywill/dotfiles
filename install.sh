@@ -55,6 +55,7 @@ install_dotfiles() {
 }
 
 install_packages
+install_lua_language_server
 install_neovim
 install_starship
 install_fish
