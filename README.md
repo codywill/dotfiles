@@ -14,7 +14,7 @@ mklink %userprofile%\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.we
 Run the install script from this directory:
 
 ```bash
-$ sudo ./install.sh
+$ ./install.sh
 ```
 
 # Packages
