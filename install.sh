@@ -41,7 +41,8 @@ install_luarocks() {
 }
 
 install_dotfiles() {
-    stow -v -t ~ */
+    stow -v -t ~ */ && \
+    ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
 install_packages
