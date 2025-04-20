@@ -5,13 +5,15 @@ sudo echo ""
 install_packages() {
     pkgs=(build-essential cmake fd-find lua5.1 liblua5.1-dev ripgrep stow tmux unzip)
     sudo apt-get update && \
-    sudo apt-get -y --ignore-missing install "${pkgs[@]}"
+    sudo apt-get -y --ignore-missing install "${pkgs[@]}" && \
+    chsh -s $(which tmux)
 }
 
 install_neovim() {
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz && \
     sudo rm -rf /opt/nvim && \
-    sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+    sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz && \
+    rm nvim-linux-x86_64.tar.gz
 }
 
 install_starship() {
