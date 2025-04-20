@@ -27,6 +27,11 @@ $ stow -v -t ~ */
 - [fish](https://fishshell.com/)
 - [WezTerm](https://wezterm.org/)
     - NOTE: If you're using SSH or WSL this needs to be installed on the host.
+    - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
+
+```bash
+mklink $HOME\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
+```
 
 # Plugins
 
