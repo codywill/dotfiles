@@ -1,6 +1,12 @@
 # Installing
 
-From this directory:
+Install `WezTerm` and `VictorMono Nerd Font` on your host:
+
+- [WezTerm](https://wezterm.org/)
+    - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
+- [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip)
+
+Run the install script from this directory:
 
 ```bash
 $ install.sh
@@ -23,9 +29,6 @@ $ install.sh
 - [neovim](https://neovim.io/)
 - [Starship](https://starship.rs/)
 - [fish](https://fishshell.com/)
-- [WezTerm](https://wezterm.org/)
-    - NOTE: If you're using SSH or WSL, the terminal only needs to be installed on the host.
-    - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
 
 ```bash
 mklink $HOME\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
