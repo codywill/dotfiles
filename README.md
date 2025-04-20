@@ -4,6 +4,11 @@ Install `WezTerm` and `VictorMono Nerd Font` on your host:
 
 - [WezTerm](https://wezterm.org/)
     - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
+
+```bash
+mklink $HOME\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
+```
+
 - [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip)
 
 Run the install script from this directory:
@@ -29,10 +34,6 @@ $ install.sh
 - [neovim](https://neovim.io/)
 - [Starship](https://starship.rs/)
 - [fish](https://fishshell.com/)
-
-```bash
-mklink $HOME\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
-```
 
 # Plugins
 
