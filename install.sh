@@ -1,7 +1,7 @@
 #!/bin/bash
 
 install_packages() {
-    pkgs=(build-essential cmake fd-find lua5.1 liblua5.4-dev ripgrep stow tmux unzip)
+    pkgs=(build-essential cmake fd-find lua5.1 liblua5.1-dev ripgrep stow tmux unzip)
     sudo apt-get -y --ignore-missing install "${pkgs[@]}"
 }
 

@@ -4,7 +4,7 @@
 - `cmake`
 - `fd-find`
 - `lua5.1`
-- `liblua5.4-dev`
+- `liblua5.1-dev`
 - `ripgrep`
 - `stow`
 - `tmux`
