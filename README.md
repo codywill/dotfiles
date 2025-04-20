@@ -1,14 +1,16 @@
-# Prerequisites
+# Packages
 
 TODO: Add a script to install these (and everything else)
 
-- `stow`
-- `lua5.1`
-- `unzip`
 - `build-essential`
 - `cmake`
-- `ripgrep`
 - `fd-find`
+- `lua5.1`
+- `liblua5.4-dev`
+- `ripgrep`
+- `stow`
+- `tmux`
+- `unzip`
 
 # Installing the dotfiles
 
@@ -21,10 +23,10 @@ $ stow -v -t ~ */
 # Software
 
 - [neovim](https://neovim.io/)
-- [tmux](https://github.com/tmux/tmux)
-- [WezTerm](https://wezterm.org/)
 - [Starship](https://starship.rs/)
 - [fish](https://fishshell.com/)
+- [WezTerm](https://wezterm.org/)
+    - NOTE: If you're using SSH or WSL this needs to be installed on the host.
 
 # Plugins
 
