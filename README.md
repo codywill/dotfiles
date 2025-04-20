@@ -24,6 +24,7 @@ $ stow -v -t ~ */
 - [tmux](https://github.com/tmux/tmux)
 - [WezTerm](https://wezterm.org/)
 - [Starship](https://starship.rs/)
+- [fish](https://fishshell.com/)
 
 # Plugins
 
