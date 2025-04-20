@@ -1,3 +1,11 @@
+# Installing
+
+From this directory:
+
+```bash
+$ install.sh
+```
+
 # Packages
 
 - `build-essential`
@@ -9,14 +17,6 @@
 - `stow`
 - `tmux`
 - `unzip`
-
-# Installing the dotfiles
-
-From this directory:
-
-```bash
-$ stow -v -t ~ */
-```
 
 # Software
 
