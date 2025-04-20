@@ -24,7 +24,7 @@ $ stow -v -t ~ */
 - [Starship](https://starship.rs/)
 - [fish](https://fishshell.com/)
 - [WezTerm](https://wezterm.org/)
-    - NOTE: If you're using SSH or WSL this needs to be installed on the host.
+    - NOTE: If you're using SSH or WSL, the terminal only needs to be installed on the host.
     - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
 
 ```bash
