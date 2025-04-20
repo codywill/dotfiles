@@ -35,10 +35,15 @@ install_luarocks() {
     rm luarocks-3.11.1.tar.gz
 }
 
+install_dotfiles() {
+    stow -v -t ~ */
+}
+
 install_packages
 install_neovim
 install_starship
 install_fish
 install_tpm
 install_luarocks
+install_dotfiles
 
