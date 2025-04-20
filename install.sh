@@ -9,6 +9,15 @@ install_packages() {
     chsh -s $(which tmux)
 }
 
+install_lua_language_server() {
+    curl -LO https://github.com/LuaLS/lua-language-server/releases/download/3.14.0/lua-language-server-3.14.0-linux-x64.tar.gz && \
+    rm -rf ~/.local/share/lua-language-server && \
+    mkdir -p ~/.local/share/lua-language-server && \
+    tar -C ~/.local/share/lua-language-server -xzf lua-language-server-3.14.0-linux-x64.tar.gz && \
+    rm lua-language-server-3.14.0-linux-x64.tar.gz && \
+    sudo ln -s ~/.local/share/lua-language-server/bin/lua-language-server /usr/bin/lua-language-server
+}
+
 install_neovim() {
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz && \
     sudo rm -rf /opt/nvim && \

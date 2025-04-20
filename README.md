@@ -34,6 +34,7 @@ $ ./install.sh
 - [neovim](https://neovim.io/)
 - [Starship](https://starship.rs/)
 - [fish](https://fishshell.com/)
+- [luarocks](https://luarocks.org/)
 
 # Plugins
 
@@ -42,11 +43,17 @@ tmux
 - [tmux-powerline](https://github.com/erikw/tmux-powerline)
 
 neovim
-- [lazy.nvim](https://lazy.folke.io/)
-    - [luarocks](https://luarocks.org/)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [blink.cmp](https://github.com/Saghen/blink.cmp)
+- [catppuccin](https://github.com/catppuccin/nvim)
+- [lazy](https://lazy.folke.io/)
+- [lazydev](https://github.com/folke/lazydev.nvim)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
     - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
     - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
-- [catppuccin.nvim](https://github.com/catppuccin/nvim)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+# Language Servers
+
+- [lua-language-server](https://luals.github.io/)
 
