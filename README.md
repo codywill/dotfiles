@@ -3,10 +3,10 @@
 Install `WezTerm` and `VictorMono Nerd Font` on your host:
 
 - [WezTerm](https://wezterm.org/)
-    - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in `$HOME`:
+    - (WSL): After installing the dotfiles, create a symlink to `.wezterm.lua` in your Windows home directory. Run the following in `cmd.exe` as admin:
 
-```bash
-mklink $HOME\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
+```cmd
+mklink %userprofile%\.wezterm.lua \\wsl.localhost\{path\to\dotfiles}\wezterm\.wezterm.lua
 ```
 
 - [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip)
