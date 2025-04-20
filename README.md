@@ -1,7 +1,5 @@
 # Packages
 
-TODO: Add a script to install these (and everything else)
-
 - `build-essential`
 - `cmake`
 - `fd-find`
