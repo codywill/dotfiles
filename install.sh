@@ -49,16 +49,24 @@ install_luarocks() {
     rm luarocks-3.11.1.tar.gz
 }
 
+install_rust_analyzer() {
+    mkdir -p ~/.local/bin && \
+    curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer && \
+    chmod +x ~/.local/bin/rust-analyzer && \
+    sudo ln -s ~/.local/bin/rust-analyzer /usr/bin/rust-analyzer
+}
+
 install_dotfiles() {
     stow -v -t ~ */ && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
-install_packages
-install_neovim
-install_starship
-install_fish
-install_tpm
-install_luarocks
+# install_packages
+# install_neovim
+# install_starship
+# install_fish
+# install_tpm
+# install_luarocks
+install_rust_analyzer
 install_dotfiles 
 
