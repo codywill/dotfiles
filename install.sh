@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#TODO: Check for existing installs and handle them more gracefully 
+#TODO: Support command line arg(s) for individual steps
+
 sudo echo ""
 
 install_packages() {
@@ -61,12 +64,12 @@ install_dotfiles() {
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 }
 
-# install_packages
-# install_neovim
-# install_starship
-# install_fish
-# install_tpm
-# install_luarocks
+install_packages
+install_neovim
+install_starship
+install_fish
+install_tpm
+install_luarocks
 install_rust_analyzer
 install_dotfiles 
 
