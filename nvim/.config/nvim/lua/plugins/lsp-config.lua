@@ -24,31 +24,6 @@ return {
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
             end, { desc = 'Toggle Inlay Hints' })
         end
-        vim.diagnostic.config({
-            -- virtual_text = {
-            --     current_line = true,
-            --     prefix = '', -- Could be '●', '▎', │, 'x', '■', , 
-            -- },
-            virtual_lines = true,
-            jump = {
-                float = true,
-            },
-            float = { border = 'single' },
-            signs = {
-                text = {
-                    [vim.diagnostic.severity.ERROR] = ' ',
-                    [vim.diagnostic.severity.WARN] = ' ',
-                    [vim.diagnostic.severity.HINT] = '󰌶 ',
-                    [vim.diagnostic.severity.INFO] = ' ',
-                },
-                numhl = {
-                    [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-                    [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-                    [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-                    [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-                },
-            },
-        })
 
         -- Servers
         local runtime_path = vim.split(package.path, ';')

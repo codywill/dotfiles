@@ -45,15 +45,28 @@ tmux
 neovim
 - [blink.cmp](https://github.com/Saghen/blink.cmp)
 - [catppuccin](https://github.com/catppuccin/nvim)
+- [FixCursorHold](https://github.com/antoinemadec/FixCursorHold.nvim) (dep)
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) (dep)
 - [lazy](https://lazy.folke.io/)
 - [lazydev](https://github.com/folke/lazydev.nvim)
+- [neotest](https://github.com/nvim-neotest/neotest)
+- [noice](https://github.com/folke/noice.nvim)
+- [nui](https://github.com/MunifTanjim/nui.nvim) (dep)
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-nio](https://github.com/nvim-neotest/nvim-nio) (dep)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify) (dep)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [plenary](https://github.com/nvim-lua/plenary.nvim) (dep)
+- [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
+- [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+- [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
-    - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
-    - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 # Language Servers
 
 - [lua-language-server](https://luals.github.io/)
+- [rust-analyzer](https://github.com/rust-lang/rust-analyzer)
 
