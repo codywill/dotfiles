@@ -30,7 +30,6 @@ keymap({ "n", "v" }, "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap({ "n", "v" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
 -- Options
-vim.o.autochdir = true
 vim.o.cmdheight = 0
 vim.o.expandtab = true
 vim.o.laststatus = 3
@@ -40,6 +39,9 @@ vim.o.shiftwidth = 4
 vim.o.signcolumn = "number"
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,terminal"
 
 -- Visualization
 vim.cmd.colorscheme "catppuccin"
@@ -48,7 +50,7 @@ vim.cmd.colorscheme "catppuccin"
 local telescope = require("telescope.builtin")
 keymap("n", "<leader>ff", telescope.find_files, { desc = "Telescope find files" })
 keymap("n", "<leader>fg", telescope.live_grep, { desc = "Telescope live grep" })
-keymap("n", "<leader>fb", telescope.buffers, { desc = "Telescope buffers" })
+keymap("n", "<leader>fc", telescope.buffers, { desc = "Telescope buffers" })
 keymap("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
 keymap("n", "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>")
 
