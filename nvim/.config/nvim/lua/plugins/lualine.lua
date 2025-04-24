@@ -11,5 +11,5 @@ return {
                 theme = custom_catppuccin,
             },
         })
-    end         
+    end
 }
