@@ -12,7 +12,7 @@ require("config.lazy")
 keymap({ "n", "v" }, "<leader>y", '"+y', opts)
 keymap({ "n", "v" }, "<leader>p", '"+p', opts)
 
--- Split operations
+-- Window operations
 keymap({ "n", "v" }, "<M-->", "<C-w>s", opts)
 keymap({ "n", "v" }, "<M-=>", "<C-w>v", opts)
 keymap({ "n", "v" }, "<M-BS>", "<C-w>q", opts)
@@ -25,6 +25,10 @@ keymap("i", "<M-j>", "<Down>", opts)
 keymap("i", "<M-k>", "<Up>", opts)
 keymap("i", "<M-l>", "<Right>", opts)
 
+-- Tab operations
+keymap({ "n", "v" }, "<leader>N", "<cmd>tabnew<CR>", opts)
+keymap({ "n", "v" }, "<leader>X", "<cmd>tabc<CR>", opts)
+
 -- Jump motions
 keymap({ "n", "v" }, "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap({ "n", "v" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -36,7 +40,7 @@ vim.o.laststatus = 3
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 4
-vim.o.signcolumn = "number"
+vim.o.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum} %s"
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
 vim.o.splitbelow = true
@@ -48,8 +52,10 @@ vim.cmd.colorscheme "catppuccin"
 
 -- Telescope hotkeys
 local telescope = require("telescope.builtin")
+keymap("n", "<leader>/", telescope.current_buffer_fuzzy_find, { desc = "Telescope buffer search" })
 keymap("n", "<leader>ff", telescope.find_files, { desc = "Telescope find files" })
 keymap("n", "<leader>fg", telescope.live_grep, { desc = "Telescope live grep" })
+keymap("n", "<leader>fG", telescope.live_grep, { desc = "Telescope git commits" })
 keymap("n", "<leader>fc", telescope.buffers, { desc = "Telescope buffers" })
 keymap("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
 keymap("n", "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>")
@@ -83,6 +89,9 @@ vim.diagnostic.config({
 keymap("n", "<leader>d", '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>', opts)
 keymap("n", "<leader>dn", '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+
+-- Git
+keymap("n", "<leader>D", '<cmd>DiffviewOpen<CR>', opts)
 
 -- Auto-save and restore session
 vim.api.nvim_create_autocmd("VimLeavePre", {
