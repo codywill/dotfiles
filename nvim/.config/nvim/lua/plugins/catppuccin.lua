@@ -12,6 +12,8 @@ return {
             },
             integrations = {
                 blink_cmp = true,
+                diffview = false,
+                gitsigns = true,
                 neotest = true,
                 noice = true,
                 treesitter = true,
