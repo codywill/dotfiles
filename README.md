@@ -40,7 +40,10 @@ $ ./install.sh
 
 tmux
 - [tpm](https://github.com/tmux-plugins/tpm)
-- [tmux-powerline](https://github.com/erikw/tmux-powerline)
+- [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
+- [tmux-battery](https://github.com/tmux-plugins/tmux-battery)
+- [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu)
+- [catppuccin/tmux](https://github.com/catppuccin/tmux)
 
 neovim
 - [blink.cmp](https://github.com/Saghen/blink.cmp)
@@ -49,21 +52,26 @@ neovim
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) (dep)
 - [lazy](https://lazy.folke.io/)
 - [lazydev](https://github.com/folke/lazydev.nvim)
+- [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [neotest](https://github.com/nvim-neotest/neotest)
 - [noice](https://github.com/folke/noice.nvim)
 - [nui](https://github.com/MunifTanjim/nui.nvim) (dep)
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) (dep)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-nio](https://github.com/nvim-neotest/nvim-nio) (dep)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify) (dep)
+- [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) (dep)
+- [persistence](https://github.com/folke/persistence.nvim)
 - [plenary](https://github.com/nvim-lua/plenary.nvim) (dep)
+- [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
-- [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
-- [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
-- [telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [snacks](https://github.com/folke/snacks.nvim)
+- [vim-surround](https://github.com/tpope/vim-surround)
 
 # Language Servers
 

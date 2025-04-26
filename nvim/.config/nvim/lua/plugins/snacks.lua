@@ -12,12 +12,25 @@ return {
             enabled = true,
             example = "advanced",
         },
-        explorer = { enabled = true },
+        explorer = {
+            enabled = true,
+        },
         indent = { enabled = true },
         input = { enabled = true },
         picker = {
             enabled = true,
             hidden = true,
+            sources = {
+                explorer = {
+                    jump = {
+                        close = true,
+                    },
+                    layout = {
+                        preset = "default",
+                        preview = true,
+                    },
+                }
+            }
         },
         notifier = { enabled = true },
         quickfile = { enabled = true },
