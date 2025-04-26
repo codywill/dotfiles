@@ -65,12 +65,13 @@ keymap("n", "<leader>fh", snacks.picker.help, { desc = "Snacks help tags" })
 keymap("n", "<leader>fb", snacks.explorer.open, { desc = "Snacks help tags" })
 
 -- Diagnostics
+local show_virtual_lines = false
 vim.diagnostic.config({
     -- virtual_text = {
     --     current_line = true,
     --     prefix = '', -- Could be '●', '▎', │, 'x', '■', , 
     -- },
-    virtual_lines = true,
+    virtual_lines = show_virtual_lines,
     jump = {
         float = true,
     },
@@ -93,6 +94,10 @@ vim.diagnostic.config({
 keymap("n", "<leader>d", '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>', opts)
 keymap("n", "<leader>dn", '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+keymap("n", "<leader>di", function()
+    show_virtual_lines = not show_virtual_lines
+    vim.diagnostic.config({ virtual_lines = show_virtual_lines })
+end, opts)
 
 -- Git
 keymap("n", "<leader>D", '<cmd>DiffviewOpen<CR>', opts)
