@@ -1,3 +1,12 @@
+local header = table.concat({
+    [[   █  █   ]],
+    [[   █ ██   ]],
+    [[   ████   ]],
+    [[   ██ ███   ]],
+    [[   █  █   ]],
+    [[             ]],
+    [[ n e o v i m ]],
+}, '\n')
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -11,6 +20,9 @@ return {
         dashboard = {
             enabled = true,
             example = "advanced",
+            preset = {
+                header = header
+            },
         },
         explorer = {
             enabled = true,
