@@ -26,5 +26,6 @@
   "render-markdown.nvim": { "branch": "main", "commit": "78ffe3b0500bbc7e37fabde723d96661538e8b32" },
   "rustaceanvim": { "branch": "master", "commit": "63dfaf6f8fe7f592bb467b1eda5603cb8dd5ce15" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
+  "toggle-fullscreen.nvim": { "branch": "main", "commit": "5222d931a691f7dffef9118623b04b164f0af9bf" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
 }
