@@ -50,15 +50,15 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,termina
 -- Visualization
 vim.cmd.colorscheme "catppuccin"
 
--- Telescope hotkeys
-local telescope = require("telescope.builtin")
-keymap("n", "<leader>/", telescope.current_buffer_fuzzy_find, { desc = "Telescope buffer search" })
-keymap("n", "<leader>ff", telescope.find_files, { desc = "Telescope find files" })
-keymap("n", "<leader>fg", telescope.live_grep, { desc = "Telescope live grep" })
-keymap("n", "<leader>fG", telescope.live_grep, { desc = "Telescope git commits" })
-keymap("n", "<leader>fc", telescope.buffers, { desc = "Telescope buffers" })
-keymap("n", "<leader>fh", telescope.help_tags, { desc = "Telescope help tags" })
-keymap("n", "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>")
+-- Snacks hotkeys
+local snacks = require("snacks")
+keymap("n", "<leader>/", snacks.picker.grep_buffers, { desc = "Snacks buffer search" })
+keymap("n", "<leader>ff", snacks.picker.files, { desc = "Snacks find files" })
+keymap("n", "<leader>fg", snacks.picker.grep, { desc = "Snacks live grep" })
+keymap("n", "<leader>fG", snacks.picker.git_log, { desc = "Snacks git commits" })
+keymap("n", "<leader>fc", snacks.picker.buffers, { desc = "Snacks buffers" })
+keymap("n", "<leader>fh", snacks.picker.help, { desc = "Snacks help tags" })
+keymap("n", "<leader>fb", snacks.explorer.open, { desc = "Snacks help tags" })
 
 -- Diagnostics
 vim.diagnostic.config({
