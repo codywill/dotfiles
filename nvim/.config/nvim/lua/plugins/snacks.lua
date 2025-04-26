@@ -21,7 +21,11 @@ return {
             enabled = true,
             example = "advanced",
             preset = {
-                header = header
+                header = {
+                    header,
+                    hl = 'NeovimDashboardLogo',
+                    align = 'center',
+                },
             },
         },
         explorer = {
