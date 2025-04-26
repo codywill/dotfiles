@@ -12,6 +12,9 @@ require("config.lazy")
 keymap({ "n", "v" }, "<leader>y", '"+y', opts)
 keymap({ "n", "v" }, "<leader>p", '"+p', opts)
 
+-- Comment line and copy it below
+keymap("n", "ycc", "yygccp", { remap = true })
+
 -- Window operations
 keymap({ "n", "v" }, "<M-->", "<C-w>s", opts)
 keymap({ "n", "v" }, "<M-=>", "<C-w>v", opts)
@@ -50,7 +53,7 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,termina
 -- Visualization
 vim.cmd.colorscheme "catppuccin"
 
--- Snacks hotkeys
+-- Snacks
 local snacks = require("snacks")
 keymap("n", "<leader>H", snacks.dashboard.open, { desc = "Snacks open dashboard" })
 keymap("n", "<leader>/", snacks.picker.grep_buffers, { desc = "Snacks buffer search" })
@@ -93,6 +96,10 @@ keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 
 -- Git
 keymap("n", "<leader>D", '<cmd>DiffviewOpen<CR>', opts)
+keymap("n", "<leader>G", '<cmd>lua Snacks.lazygit()<CR>', opts)
+keymap({ "n", "v" }, "<leader>gY", function()
+    Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
+end, { desc = "Git Browse (copy)" })
 
 -- Persistence
 keymap("n", "<leader>qS", function() require("persistence").load() end, opts)
