@@ -5,27 +5,23 @@ return {
         'lewis6991/gitsigns.nvim',
         'kevinhwang91/nvim-hlslens',
     },
-    opts = {
-        handlers = {
-            gitsigns = true,
-            search = true,
-        },
-    },
-    config = function()
-        require('scrollbar').setup({
-            handle = {
-                color = mocha.overlay0,
-            },
-            handlers = {
-                cursor = false,
-            },
-            marks = {
-                GitAdd = { text = '│' },
-                GitChange = { text = '│' },
-            },
-        })
+    init = function()
         require('hlslens').setup({
             override_lens = function() end,
         })
-    end
+    end,
+    opts = {
+        handle = {
+            color = mocha.overlay0,
+        },
+        handlers = {
+            cursor = false,
+            gitsigns = true,
+            search = true,
+        },
+        marks = {
+            GitAdd = { text = '│' },
+            GitChange = { text = '│' },
+        },
+    },
 }
