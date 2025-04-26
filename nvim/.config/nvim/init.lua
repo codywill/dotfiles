@@ -52,6 +52,7 @@ vim.cmd.colorscheme "catppuccin"
 
 -- Snacks hotkeys
 local snacks = require("snacks")
+keymap("n", "<leader>H", snacks.dashboard.open, { desc = "Snacks open dashboard" })
 keymap("n", "<leader>/", snacks.picker.grep_buffers, { desc = "Snacks buffer search" })
 keymap("n", "<leader>ff", snacks.picker.files, { desc = "Snacks find files" })
 keymap("n", "<leader>fg", snacks.picker.grep, { desc = "Snacks live grep" })
@@ -93,15 +94,11 @@ keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 -- Git
 keymap("n", "<leader>D", '<cmd>DiffviewOpen<CR>', opts)
 
--- Auto-save and restore session
-vim.api.nvim_create_autocmd("VimLeavePre", {
-    pattern = "*",
-    callback = function()
-        if vim.g.savesession then
-            vim.api.nvim_command("mks!")
-        end
-    end
-})
+-- Persistence
+keymap("n", "<leader>qS", function() require("persistence").load() end, opts)
+keymap("n", "<leader>qs", function() require("persistence").select() end, opts)
+keymap("n", "<leader>ql", function() require("persistence").load({ last = true }) end, opts)
+keymap("n", "<leader>qd", function() require("persistence").stop() end, opts)
 
 -- Auto-format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
