@@ -59,6 +59,14 @@ install_rust_analyzer() {
     sudo ln -s ~/.local/bin/rust-analyzer /usr/bin/rust-analyzer
 }
 
+install_colorscripts() {
+    git clone https://gitlab.com/dwt1/shell-color-scripts.git && \
+    pushd shell-color-scripts && \
+    sudo make install && \
+    popd && \
+    rm -rf shell-color-scripts
+}
+
 install_dotfiles() {
     stow -v -t ~ */ && \
     ~/.tmux/plugins/tpm/scripts/install_plugins.sh
@@ -72,5 +80,6 @@ install_fish
 install_tpm
 install_luarocks
 install_rust_analyzer
+install_colorscripts
 install_dotfiles 
 
