@@ -62,7 +62,8 @@ keymap("n", "<leader>fg", snacks.picker.grep, { desc = "Snacks live grep" })
 keymap("n", "<leader>fG", snacks.picker.git_log, { desc = "Snacks git commits" })
 keymap("n", "<leader>fc", snacks.picker.buffers, { desc = "Snacks buffers" })
 keymap("n", "<leader>fh", snacks.picker.help, { desc = "Snacks help tags" })
-keymap("n", "<leader>fb", snacks.explorer.open, { desc = "Snacks help tags" })
+keymap("n", "<leader>fb", snacks.explorer.reveal, { desc = "Snacks file browser relative" })
+keymap("n", "<leader>fB", snacks.explorer.open, { desc = "Snacks file browser absolute" })
 
 -- Diagnostics
 local show_virtual_lines = false
@@ -91,7 +92,7 @@ vim.diagnostic.config({
         },
     },
 })
-keymap("n", "<leader>d", '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>', opts)
+keymap("n", "<leader>do", '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>', opts)
 keymap("n", "<leader>dn", '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap("n", "<leader>di", function()
@@ -100,17 +101,17 @@ keymap("n", "<leader>di", function()
 end, opts)
 
 -- Git
-keymap("n", "<leader>D", '<cmd>DiffviewOpen<CR>', opts)
-keymap("n", "<leader>G", '<cmd>lua Snacks.lazygit()<CR>', opts)
+keymap("n", "<leader>gd", '<cmd>DiffviewOpen<CR>', opts)
+keymap("n", "<leader>gg", '<cmd>lua Snacks.lazygit()<CR>', opts)
 keymap({ "n", "v" }, "<leader>gY", function()
     Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
 
 -- Persistence
-keymap("n", "<leader>qS", function() require("persistence").load() end, opts)
-keymap("n", "<leader>qs", function() require("persistence").select() end, opts)
-keymap("n", "<leader>ql", function() require("persistence").load({ last = true }) end, opts)
-keymap("n", "<leader>qd", function() require("persistence").stop() end, opts)
+keymap("n", "<leader>qS", function() require("persisted").load() end, opts)
+keymap("n", "<leader>qs", function() require("persisted").select() end, opts)
+keymap("n", "<leader>ql", function() require("persisted").load({ last = true }) end, opts)
+keymap("n", "<leader>qd", function() require("persisted").stop() end, opts)
 
 -- Auto-format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
