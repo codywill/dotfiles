@@ -32,6 +32,7 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
+config.window_decorations = "RESIZE"
 
 wezterm.on('format-window-title', function()
     local title = ''
