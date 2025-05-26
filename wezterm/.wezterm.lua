@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-local is_darwin = wezterm.target_triple:find("darwin") ~= nil
+-- local is_darwin = wezterm.target_triple:find("darwin") ~= nil
 local is_linux = wezterm.target_triple:find("linux") ~= nil
 local is_windows = wezterm.target_triple:find("windows") ~= nil
 
@@ -12,6 +12,9 @@ end
 -- OS specific
 if is_windows then
     config.default_domain = 'WSL:Ubuntu'
+    config.window_decorations = "TITLE | RESIZE"
+elseif is_linux then
+    config.window_decorations = "RESIZE"
 end
 
 -- Config
@@ -32,7 +35,6 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
-config.window_decorations = "RESIZE"
 
 wezterm.on('format-window-title', function()
     local title = ''
