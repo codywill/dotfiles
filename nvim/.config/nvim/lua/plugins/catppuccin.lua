@@ -44,6 +44,7 @@ return {
                 indent_scope_color = "overlay0",
             },
             treesitter = true,
-        }
+        },
+        transparent_background = true,
     }
 }

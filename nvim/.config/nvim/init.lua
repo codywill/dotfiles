@@ -32,6 +32,12 @@ keymap("i", "<M-l>", "<Right>", opts)
 keymap({ "n", "v" }, "<leader>N", "<cmd>tabnew<CR>", opts)
 keymap({ "n", "v" }, "<leader>X", "<cmd>tabc<CR>", opts)
 
+-- Clear highlights with escape
+keymap("n", "<Esc>", "<cmd>noh<CR>", opts)
+
+-- Search within selected
+keymap("v", "//", 'y/<C-R>"<CR>N')
+
 -- Jump motions
 keymap({ "n", "v" }, "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap({ "n", "v" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -52,6 +58,13 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,termina
 
 -- Visualization
 vim.cmd.colorscheme "catppuccin"
+vim.g.walh_dimming = 1
+
+-- LSP
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('nixd')
+vim.lsp.enable('basedpyright')
+vim.lsp.enable('clangd')
 
 -- Snacks
 local snacks = require("snacks")
@@ -64,14 +77,13 @@ keymap("n", "<leader>fc", snacks.picker.buffers, { desc = "Snacks buffers" })
 keymap("n", "<leader>fh", snacks.picker.help, { desc = "Snacks help tags" })
 keymap("n", "<leader>fb", snacks.explorer.reveal, { desc = "Snacks file browser relative" })
 keymap("n", "<leader>fB", snacks.explorer.open, { desc = "Snacks file browser absolute" })
+keymap("n", "gd", snacks.picker.lsp_definitions, { desc = "Snacks go to definition" })
+keymap("n", "gD", snacks.picker.lsp_declarations, { desc = "Snacks go to declaration" })
+keymap("n", "gr", snacks.picker.lsp_references, { nowait = true, desc = "Snacks find references" })
 
 -- Diagnostics
 local show_virtual_lines = false
 vim.diagnostic.config({
-    -- virtual_text = {
-    --     current_line = true,
-    --     prefix = '', -- Could be '●', '▎', │, 'x', '■', , 
-    -- },
     virtual_lines = show_virtual_lines,
     jump = {
         float = true,
