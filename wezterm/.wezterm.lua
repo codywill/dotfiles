@@ -1,7 +1,5 @@
 local wezterm = require 'wezterm'
 
-wezterm.log_info(wezterm.target_triple)
-
 local is_linux = wezterm.target_triple:find("linux") ~= nil
 local is_windows = wezterm.target_triple:find("windows") ~= nil
 
@@ -22,10 +20,11 @@ end
 config.default_prog = { 'tmux' }
 
 -- Style
-local default_font_size = 14
+local default_font_size = 12.0
 local font_size = default_font_size
 local resolution_to_font_size = {
     ["3840x2160"] = 14,
+    ["2880x1800"] = 12.1,
     ["2560x1440"] = 12.5,
     ["1920x1200"] = 13.1,
 }
