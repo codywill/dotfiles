@@ -16,7 +16,10 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
-        bigfile = { enabled = true },
+        bigfile = { 
+            enabled = true,
+            line_length = 2000,
+        },
         dashboard = {
             enabled = true,
             example = "advanced",

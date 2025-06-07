@@ -10,3 +10,11 @@ $character
 [character]
 success_symbol = '[➜](bold green) '
 error_symbol = '[✗](bold red) '
+
+[nix_shell]
+symbol = '[](cyan)'
+format = '$symbol  [$name]($style) '
+
+[python]
+symbol = '[](yellow)'
+format = '($symbol  [$virtualenv](blue) )'
