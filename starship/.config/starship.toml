@@ -13,7 +13,7 @@ $character
 
 [username]
 format = '[ $user]($style) '
-detect_env_vars = ['SSH_ENVIRONMENT']
+detect_env_vars = ['SSH_CONNECTION']
 
 [hostname]
 ssh_only = true
