@@ -1,4 +1,6 @@
 format = """
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -6,6 +8,16 @@ $line_break\
 $shell\
 $character
 """
+
+[username]
+format = '[ $user]($style) '
+detect_env_vars = ['SSH_ENVIRONMENT']
+
+[hostname]
+ssh_only = true
+ssh_symbol = " "
+format = '[$ssh_symbol$hostname]($style) '
+style = 'bold green'
 
 [character]
 success_symbol = '[➜](bold green) '
