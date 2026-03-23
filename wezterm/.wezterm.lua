@@ -24,9 +24,9 @@ local default_font_size = 12.0
 local font_size = default_font_size
 local resolution_to_font_size = {
     ["3840x2160"] = 14,
-    ["2880x1800"] = 12.1,
+    ["2880x1736"] = 11.1,
     ["2560x1440"] = 12.5,
-    ["1920x1200"] = 13.1,
+    ["1920x1200"] = 11.8,
 }
 
 local function recompute_font_size(window)
@@ -53,7 +53,6 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
-config.window_background_opacity = 0.96
 config.initial_rows = 40
 config.initial_cols = 150
 
