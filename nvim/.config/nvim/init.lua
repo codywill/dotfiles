@@ -65,6 +65,7 @@ vim.lsp.enable('lua_ls')
 vim.lsp.enable('nixd')
 vim.lsp.enable('basedpyright')
 vim.lsp.enable('clangd')
+vim.lsp.enable('rust-analyzer')
 
 -- Snacks
 local snacks = require("snacks")
