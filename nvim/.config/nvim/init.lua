@@ -31,6 +31,16 @@ keymap("i", "<M-l>", "<Right>", opts)
 -- Tab operations
 keymap({ "n", "v" }, "<leader>N", "<cmd>tabnew<CR>", opts)
 keymap({ "n", "v" }, "<leader>X", "<cmd>tabc<CR>", opts)
+keymap({ "n", "v" }, "<leader>1", "1gt", opts)
+keymap({ "n", "v" }, "<leader>2", "2gt", opts)
+keymap({ "n", "v" }, "<leader>3", "3gt", opts)
+keymap({ "n", "v" }, "<leader>4", "4gt", opts)
+keymap({ "n", "v" }, "<leader>5", "5gt", opts)
+keymap({ "n", "v" }, "<leader>6", "6gt", opts)
+keymap({ "n", "v" }, "<leader>7", "7gt", opts)
+keymap({ "n", "v" }, "<leader>8", "8gt", opts)
+keymap({ "n", "v" }, "<leader>9", "9gt", opts)
+keymap({ "n", "v" }, "<leader>0", "<cmd>tablast<CR>", opts)
 
 -- Clear highlights with escape
 keymap("n", "<Esc>", "<cmd>noh<CR>", opts)
@@ -42,10 +52,36 @@ keymap("v", "//", 'y/<C-R>"<CR>N')
 keymap({ "n", "v" }, "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap({ "n", "v" }, "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
+-- Tabline
+_G.MyTabline = function()
+    local s = ''
+    for i = 1, vim.fn.tabpagenr('$') do
+        local is_current = i == vim.fn.tabpagenr()
+        local winnr = vim.fn.tabpagewinnr(i)
+        local bufnr = vim.fn.tabpagebuflist(i)[winnr]
+        local bufname = vim.fn.bufname(bufnr)
+        local name
+        if is_current then
+            -- Current tab should show the full path of selected file
+            name = vim.fn.fnamemodify(bufname, ':~')
+            -- Highlighted tab number
+            s = s .. '%#TabLineSelNum# ' .. i .. ' %#TabLineSel#' .. name .. ' '
+        else
+            -- Idle tabs should show just the project root
+            name = vim.fn.fnamemodify(vim.fn.getcwd(winnr, i), ':t')
+            -- Unhighlighted tab number
+            s = s .. '%#TabLineNum# ' .. i .. ' %#TabLine#' .. name .. ' '
+        end
+    end
+    return s .. '%#TabLineFill#%T'
+end
+
+vim.o.tabline = '%!v:lua.MyTabline()'
+
 -- Options
 vim.o.cmdheight = 0
 vim.o.expandtab = true
-vim.o.laststatus = 3
+vim.o.laststatus = 2
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 4
@@ -111,6 +147,9 @@ keymap("n", "<leader>dp", '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap("n", "<leader>di", function()
     show_virtual_lines = not show_virtual_lines
     vim.diagnostic.config({ virtual_lines = show_virtual_lines })
+end, opts)
+keymap("n", "<leader>i", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 end, opts)
 
 -- Git
