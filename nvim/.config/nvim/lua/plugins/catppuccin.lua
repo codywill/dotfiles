@@ -18,6 +18,10 @@ return {
                 TabLine = { fg = colors.overlay1, bg = colors.none },
                 TabLineNum = { fg = colors.surface2, bg = colors.none },
                 TabLineFill = { bg = colors.none },
+                NormalFloat = { bg = colors.none },
+                FloatBorder = { bg = colors.none },
+                FloatTitle = { bg = colors.none },
+                FloatFooter = { bg = colors.none },
             }
         end,
         integrations = {
